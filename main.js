@@ -8,29 +8,46 @@ const personalMovieDB = {
 	privat: false
 };
 
-const a = prompt('Один из последних просмотренных фильмов?', ''),
-	  b = prompt('Насколько оцените его?', ''),
-	  c = prompt('Один из последних просмотренных фильмов?', ''),
-	  d = prompt('Насколько оцените его?', '');
-
-let secondPrivat = 12;
 
 
-personalMovieDB.movies[a] = b;
-personalMovieDB.movies[c] = d;
-personalMovieDB.privat = secondPrivat;
+for (let i = 0; i < 2; i++) {
+	const a = prompt('Один из последних просмотренных фильмов?', ''),
+		  b = prompt('Насколько оцените его?', '');
+
+	if (a != null && b != null && a != '' && b != '') {
+		personalMovieDB.movies[a] = b;
+	} else {
+		i--;
+	}
+}
+
+
+
+
+
+if (personalMovieDB.count < 10) {
+	alert('You are not a film lover(');
+} else if (personalMovieDB.count >= 10 && personalMovieDB.count <=30 ) {
+	alert('You are a typical viewer');
+} else if (personalMovieDB.count > 30){
+	alert('You are film lover)');
+} else {
+	alert('You type not correct(');
+}
+
+
+
 console.log(personalMovieDB);
 
-console.log(personalMovieDB.privat);
 
-let age = 55;
-if (age >= 14 && age <= 90) {
-	console.log("true");
-	
-} else {
-	console.log('false');
-	
-}
+
+
+
+
+
+
+
+
 
 
 
